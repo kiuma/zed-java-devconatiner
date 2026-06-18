@@ -1,0 +1,41 @@
+{
+  "languages": {
+    "XML": {
+      "formatter": {
+        "external": {
+          "command": "xmllint",
+          "arguments": ["--format", "-"]
+        }
+      }
+    },
+    "Java": {
+      "formatter": {
+        "external": {
+          "command": "sh",
+          "arguments": [
+            "-c",
+            "cat > \"$1\" && mvn -q formatter:format -Dformatter.includes=\"$1\" >/dev/null && cat \"$1\"",
+            "zed-maven-formatter",
+            "{buffer_path}"
+          ]
+        }
+      }
+    }
+  },
+  "lsp": {
+    "jdtls": {
+      "settings": {
+        "java": {
+          "jdt": {
+            "ls": {
+              "lombokSupport": {
+                "enabled": true
+              },
+              "vmargs": "-Xmx1G -XX:+UseG1GC -XX:+UseStringDeduplication"
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+[
+  {
+    "adapter": "Java",
+    "label": "Attach to WebLogic (JDWP)",
+    "request": "attach",
+    "hostName": "host.docker.internal",
+    "port": 17001
+  }
+]
